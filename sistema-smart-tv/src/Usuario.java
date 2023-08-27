@@ -1,7 +1,7 @@
 public class Usuario {
     public static void main(String[] args) {
         
-
+        //Criando um objeto smartTv a partir da classe SmartTv
         SmartTv smartTv = new SmartTv();
 
         System.out.println("TV ligada? " + smartTv.ligada);

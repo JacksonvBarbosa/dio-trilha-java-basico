@@ -1,8 +1,10 @@
 public class SmartTv {
+    //Variaveis
     boolean ligada = false;
     int canal = 1;
     int volume = 25;
 
+    //Métodos
     public void ligar(){
         ligada = true;
     }
