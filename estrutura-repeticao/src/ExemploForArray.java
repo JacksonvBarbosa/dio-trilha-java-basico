@@ -11,7 +11,7 @@ public class ExemploForArray {
         // Forma abreviada
         //DOIS pontos indica que a cada iteração os alunos será adicionado a aluno atéo final do array
         for (String fruta : frutas) {
-            if (fruta.equals(frutas[2])){
+            if (fruta.equals("Uva")){
                 continue;
             }
                 
