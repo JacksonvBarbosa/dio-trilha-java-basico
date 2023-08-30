@@ -36,6 +36,9 @@ public class AboutMe {
                     "Os campos idade/altura precisam ser númerico e não poderá usar vírgula");
             System.out.println("Realize o Cadastro Novamente!");
         }
+        catch(NullPointerException e) {
+            System.out.println("Campo Vazio!");
+        }
         finally{
             System.out.println("Ciclo finalizado!");
         }
