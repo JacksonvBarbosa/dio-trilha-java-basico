@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class AboutMe {
 
     public static void main(String[] args) {
+
         try {
             // criando o objeto scanner
             Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
@@ -19,16 +20,16 @@ public class AboutMe {
 
             System.out.println("Digite sua altura");
             double altura = scanner.nextDouble();
-
+            
             // imprimindo os dados obtidos pelo usuario
             System.out.println("Olá, me chamo " + nome.toUpperCase() + " " + sobrenome.toUpperCase());
             System.out.println("Tenho " + idade + " anos ");
             System.out.println("Minha altura é " + altura + "cm ");
             scanner.close();
+            
         } catch (java.util.InputMismatchException e) {
             System.out.println(
-                    "Os campos idade precisa ser númerico e o campo altura precisa ser númerico e não poderá usar vírgula");
+                    "Os campos idade/altura precisam ser númerico e não poderá usar vírgula");
         }
-
     }
 }
