@@ -6,6 +6,7 @@ public class AboutMe {
     public static void main(String[] args) {
 
         try {
+            while(true) {
             // criando o objeto scanner
             Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
@@ -26,10 +27,17 @@ public class AboutMe {
             System.out.println("Tenho " + idade + " anos ");
             System.out.println("Minha altura é " + altura + "cm ");
             scanner.close();
+            System.out.println("Cadastro Realizado com sucesso!");
+            break;
+            }
             
         } catch (java.util.InputMismatchException e) {
             System.out.println(
                     "Os campos idade/altura precisam ser númerico e não poderá usar vírgula");
+            System.out.println("Realize o Cadastro Novamente!");
+        }
+        finally{
+            System.out.println("Ciclo finalizado!");
         }
     }
 }
