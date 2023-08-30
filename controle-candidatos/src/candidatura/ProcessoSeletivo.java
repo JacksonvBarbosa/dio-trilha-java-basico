@@ -6,14 +6,34 @@ public class ProcessoSeletivo {
 	
 	public static void main(String[] args) {
 		System.out.println("Processo Seletivo");
-		selecaoCandidatos();
+		//selecaoCandidatos();
+		imprimirSelecinados();
 		
+	}
+	
+	//Métodos
+	
+	//Case 3 Imprimir Selecionados
+	static void imprimirSelecinados() {
+		String [] candidatos = {"FELIPE","MÁRCIA","JULIA","PAULO","AUGUSTO"};
+		System.out.println("Imprimindo a lista de candidatos informando o indice do elemento");
+		
+		for(int indice=0; indice < candidatos.length; indice++) {
+			System.out.printf("O candidato de nº %d é %s%n", indice + 1, candidatos[indice]);
+		}
+		
+		System.out.println("\nForma abreviada de interação (for each)\n");
+		
+		for(String candidato: candidatos) {
+			System.out.printf("O candidato selecionado foi %s%n", candidato);
+		}
 	}
 	
 	static void selecaoCandidatos() {
 		// Array com a lista de candidatos
 		String [] candidatos = {"FELIPE","MÁRCIA","JULIA","PAULO","AUGUSTO","MÔNICA","FABRÍCIO","MIRELA","DANIELA","JORGE"};
 	
+		//Variavies auxiliares do while case 2
 		int candidatosSelecionados = 0;
 		int candidatoAtual = 0;
 		double salarioBase = 2000.00;
@@ -36,7 +56,8 @@ public class ProcessoSeletivo {
 	static double valorPretendido() {
 	     return ThreadLocalRandom.current().nextDouble(1800, 2200);
 	}
-
+	
+	//Função não utilizada no momento 30/08/23 10:08 case 1
 	static void analisarCandidato(double salarioPretendido) {
 		double salarioBase = 2000.00;
 		if (salarioBase > salarioPretendido) {
