@@ -4,14 +4,17 @@ import exceptions.BusinessException;
 
 public class Account {
 	
+	//Variaveis da Classe
 	private Integer number;
 	private String holder;
 	private Double balance;
 	private Double withdrawLimit;
 	
+	//Construtor padrão sem parametros
 	public Account () {
 	}
 
+	//Construtor padrão com todos os parametros
 	public Account(Integer number, String holder, Double balance, Double withdrawLimit) {
 		this.number = number;
 		this.holder = holder;
@@ -51,12 +54,13 @@ public class Account {
 		this.withdrawLimit = withdrawLimit;
 	}
 
+	//Métodos
 	public void deposit(double amount) {
 		balance += amount;
 	}
 	
 	public void withdraw(double amount) {
-		validateWithdraw(amount);
+		validateWithdraw(amount);//Chama Regra de negócio
 		balance -= amount;
 	}
 	
