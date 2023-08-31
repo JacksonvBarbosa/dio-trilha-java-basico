@@ -1,5 +1,6 @@
 package candidatura;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo {
@@ -7,11 +8,48 @@ public class ProcessoSeletivo {
 	public static void main(String[] args) {
 		System.out.println("Processo Seletivo");
 		//selecaoCandidatos();
-		imprimirSelecinados();
+		//imprimirSelecinados();
 		
+		String [] candidatos = {"FELIPE","MÁRCIA","JULIA","PAULO","AUGUSTO"};
+		for (String candidato: candidatos) {
+			entrandoContato(candidato);
+		}
 	}
 	
 	//Métodos
+	
+	static void entrandoContato(String candidato) {
+		//Variaveis auxiliares
+		int tentativasRealizadas = 1;
+		boolean continuarTentando = true;
+		boolean atendeu = false;
+		
+		//Loop Condicional do while
+		do {
+			//as variaveis acima precisará sofrer alterações para poder sair do loop infinito
+			atendeu = atender();
+			continuarTentando = !atendeu;
+			if(continuarTentando)
+				tentativasRealizadas++;
+			else
+				System.out.println("CONTATO REALIZADO COM SUCESSO");
+			
+		}while(continuarTentando && tentativasRealizadas<3);
+		
+		if(atendeu)
+			System.out.println("CONSEGUIMOS CONTATO COM " + candidato +" NA " + tentativasRealizadas + " TENTATIVA");
+		else
+			System.out.println("NÃO CONSEGUIMOS CONTATO COM " + candidato +", NÚMERO MAXIMO TENTATIVAS " + tentativasRealizadas + " REALIZADA");
+		
+		
+	}
+	
+	//Case 4 - Contatar candidato
+	
+		//método auxiliar
+			static boolean atender() {
+				return new Random().nextInt(3)==1;	
+			}
 	
 	//Case 3 Imprimir Selecionados
 	static void imprimirSelecinados() {
@@ -24,6 +62,7 @@ public class ProcessoSeletivo {
 		
 		System.out.println("\nForma abreviada de interação (for each)\n");
 		
+		//Usabilidade for each
 		for(String candidato: candidatos) {
 			System.out.printf("O candidato selecionado foi %s%n", candidato);
 		}
@@ -68,4 +107,5 @@ public class ProcessoSeletivo {
 			System.out.println("AGUARDANDO RESULTADO DOS DEMAIS CANDIDATOS");
 		}
 	}
+	
 }
